@@ -1,2 +1,2 @@
 # GClient
-Game Client, (unity &amp; c#)
+use c++ client
