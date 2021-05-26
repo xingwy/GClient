@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include <QTimer>
+#include <QImage>
 #include <iostream>
 
 using namespace std;
@@ -25,7 +26,8 @@ public slots:
 
 private:
     Ui::Game *ui;
-    QTimer *gTimer;
+    QTimer *g_timer;
+    QImage *m_img;
 
 
 };

@@ -11,11 +11,13 @@ CONFIG += c++11
 SOURCES += \
     main.cpp \
     game.cpp \
+    mi.cpp \
     src/base/item.cpp \
     src/module/bag.cpp
 
 HEADERS += \
     game.h \
+    mi.h \
     src/base/item.h \
     src/module/bag.h
 
@@ -31,3 +33,6 @@ CONFIG += embed_translations
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+RESOURCES += \
+    res/img.qrc

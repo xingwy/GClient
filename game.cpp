@@ -6,13 +6,15 @@ Game::Game(QWidget *parent)
     , ui(new Ui::Game)
 {
     ui->setupUi(this);
-    gTimer = new QTimer(this);
+    g_timer = new QTimer(this);
+    m_img = new QImage("C:/Users/Administrator/Desktop/workspace/GClient/res/images/tank.jpg");
+
 }
 
 Game::~Game()
 {
     delete ui;
-    delete gTimer;
+    delete g_timer;
 }
 
 void Game::run() {
@@ -21,12 +23,14 @@ void Game::run() {
 //    });
 
     cout<<"start run"<<endl;
-    connect(gTimer, SIGNAL(timeout()), this, SLOT(update()));
-    gTimer->setInterval(40);
-    gTimer->start();
+    connect(g_timer, SIGNAL(timeout()), this, SLOT(update()));
+    g_timer->setInterval(40);
+    g_timer->start();
 
 }
 void Game::update() {
     // 获取所有数据刷新显示盘
-    cout<<"flush"<<endl;
+    this->ui->centralwidget->update();
+
 }
+
