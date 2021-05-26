@@ -14,5 +14,6 @@ int main(int argc, char *argv[])
     Game w;
 
     w.show();
+    w.run();
     return a.exec();
 }

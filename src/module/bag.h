@@ -2,6 +2,7 @@
 #define BAG_H
 
 #include <qmap.h>
+
 #include <QVector>
 #include <QApplication>
 #include <QLocale>
@@ -25,8 +26,9 @@ private:
     // 背包大小
     int _size;
     // 物品池 <格子ID, 道具>
-    QMap<int, Item> _gridPool;
-    QMap<int, QVector<int>> _itemHash;
+    QMap<int, Item> *_gridPool;
+    QMap<int, QVector<int>> *_itemHash;
+
 
 };
 
