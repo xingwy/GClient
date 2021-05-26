@@ -10,16 +10,20 @@ CONFIG += c++11
 
 SOURCES += \
     main.cpp \
-    game.cpp
+    game.cpp \
+    src/base/item.cpp \
+    src/module/bag.cpp
 
 HEADERS += \
-    game.h
+    game.h \
+    src/base/item.h \
+    src/module/bag.h
 
 FORMS += \
     game.ui
 
 TRANSLATIONS += \
-    GClient_zh_CN.ts
+
 CONFIG += lrelease
 CONFIG += embed_translations
 
