@@ -1,12 +1,15 @@
 #ifndef MODULEBASE_H
 #define MODULEBASE_H
 
+#include "../../lib/qui.h"
+
 class Agent;
 
-class ModuleBase
+
+class ModuleBase: public QUi
 {
 public:
-    ModuleBase(Agent *parent = nullptr);
+    ModuleBase(QWidget *parent = nullptr, Agent *agent = nullptr);
     ~ModuleBase();
 
     Agent* getAgent();

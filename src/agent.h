@@ -11,10 +11,11 @@
 class Agent
 {
 public:
-    Agent();
+    Agent(QWidget *parent = nullptr);
     ~Agent();
 
     Bag* getBag();
+    void update();
 private:
     QString account;
     QString name;

@@ -1,6 +1,6 @@
 #include "bag.h"
 
-Bag::Bag(Agent *parent): ModuleBase(parent)
+Bag::Bag(QWidget *parent, Agent *agent): ModuleBase(parent, agent)
 {
     this->_size = 0;
     this->_gridPool = new QMap<int, Item>();

@@ -3,6 +3,7 @@
 
 #include <QObject>
 #include <QWidget>
+#include <QMainWindow>
 
 class QUi : public QWidget
 {

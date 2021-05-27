@@ -1,7 +1,7 @@
 #include "module_base.h"
 
-ModuleBase::ModuleBase(Agent *parent) {
-    _agent = parent;
+ModuleBase::ModuleBase(QWidget *parent, Agent *agent): QUi(parent) {
+    _agent = agent;
 }
 
 ModuleBase::~ModuleBase() {

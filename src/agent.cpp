@@ -3,9 +3,9 @@
 #include <QImage>
 #include <iostream>
 
-Agent::Agent()
+Agent::Agent(QWidget *parent)
 {
-    bag = new Bag(this);
+    bag = new Bag(parent, this);
 }
 
 Agent::~Agent()

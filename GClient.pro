@@ -17,7 +17,7 @@ SOURCES += \
     src/base/item.cpp \
     src/base/module_base.cpp \
     src/module/bag.cpp \
-    src/module/login.cpp
+    src/singleton/login.cpp
 
 HEADERS += \
     game.h \
@@ -27,7 +27,7 @@ HEADERS += \
     src/base/item.h \
     src/base/module_base.h \
     src/module/bag.h \
-    src/module/login.h
+    src/singleton/login.h
 
 FORMS += \
     game.ui

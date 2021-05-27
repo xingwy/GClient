@@ -19,7 +19,7 @@ using namespace std;
 class Bag: public ModuleBase
 {
 public:
-    Bag(Agent *parent = nullptr);
+    Bag(QWidget *parent = nullptr, Agent *agent = nullptr);
 
     Item findItemById();
 
