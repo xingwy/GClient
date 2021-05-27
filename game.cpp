@@ -9,6 +9,8 @@ Game::Game(QWidget *parent)
     g_timer = new QTimer(this);
     m_img = new QImage("C:/Users/Administrator/Desktop/workspace/GClient/res/images/tank.jpg");
 
+    agent = new Agent();
+
 }
 
 Game::~Game()
@@ -18,9 +20,6 @@ Game::~Game()
 }
 
 void Game::run() {
-//    connect(gTimer, &QTimer::timeout, [=](){
-//        this->flush();
-//    });
 
     cout<<"start run"<<endl;
     connect(g_timer, SIGNAL(timeout()), this, SLOT(update()));
@@ -31,6 +30,9 @@ void Game::run() {
 void Game::update() {
     // 获取所有数据刷新显示盘
     this->ui->centralwidget->update();
+
+    cout<<agent->getBag();
+
 
 }
 

@@ -9,19 +9,22 @@
 #include <QTranslator>
 #include <QDebug>
 #include <iostream>
+
 #include "../base/item.h"
+#include "../base/module_base.h"
 
 using namespace std;
 
 
-class Bag
+class Bag: public ModuleBase
 {
 public:
-    Bag();
+    Bag(Agent *parent = nullptr);
 
     Item findItemById();
 
 private:
+
 
     // 背包大小
     int _size;

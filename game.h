@@ -6,6 +6,8 @@
 #include <QImage>
 #include <iostream>
 
+#include "./src/agent.h"
+
 using namespace std;
 
 QT_BEGIN_NAMESPACE
@@ -28,6 +30,8 @@ private:
     Ui::Game *ui;
     QTimer *g_timer;
     QImage *m_img;
+
+    Agent *agent;
 
 
 };

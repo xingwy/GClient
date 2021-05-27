@@ -9,17 +9,25 @@ CONFIG += c++11
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    lib/qui.cpp \
     main.cpp \
     game.cpp \
     mi.cpp \
+    src/agent.cpp \
     src/base/item.cpp \
-    src/module/bag.cpp
+    src/base/module_base.cpp \
+    src/module/bag.cpp \
+    src/module/login.cpp
 
 HEADERS += \
     game.h \
+    lib/qui.h \
     mi.h \
+    src/agent.h \
     src/base/item.h \
-    src/module/bag.h
+    src/base/module_base.h \
+    src/module/bag.h \
+    src/module/login.h
 
 FORMS += \
     game.ui
@@ -36,3 +44,5 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 RESOURCES += \
     res/img.qrc
+
+DISTFILES +=

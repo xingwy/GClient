@@ -6,16 +6,16 @@
 #include <QImage>
 #include <QPainter>
 #include <iostream>
+#include "./lib/qui.h"
 
 using namespace std;
-class mi : public QWidget
+class mi : public QUi
 {
     Q_OBJECT
 public:
     explicit mi(QWidget *parent = nullptr);
 
 signals:
-
 
     // QWidget interface
 protected:
