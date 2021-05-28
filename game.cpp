@@ -9,8 +9,10 @@ Game::Game(QWidget *parent)
     // 设置面板
 
     g_timer = new QTimer(this);
-
     agent = new Agent(this->ui->centralwidget);
+
+    // 初始化登录widget
+    uc_login = new UCLogin(this->ui->centralwidget);
 }
 
 Game::~Game()
@@ -27,7 +29,6 @@ void Game::run() {
     g_timer->start();
 
     // 设置窗体大小
-    ui->centralwidget->setFixedSize(960, 540);
 
 }
 void Game::update() {

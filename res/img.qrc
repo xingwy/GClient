@@ -3,5 +3,6 @@
         <file>images/tank.jpg</file>
         <file>images/river.jpg</file>
         <file>images/bg/bg_black.jpg</file>
+        <file>images/scene/s_login_v1.jpg</file>
     </qresource>
 </RCC>
