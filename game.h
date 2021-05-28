@@ -2,6 +2,13 @@
 #define GAME_H
 
 #include <QMainWindow>
+#include <QTimer>
+#include <QImage>
+#include <iostream>
+
+#include "./src/agent.h"
+
+using namespace std;
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class Game; }
@@ -14,8 +21,18 @@ class Game : public QMainWindow
 public:
     Game(QWidget *parent = nullptr);
     ~Game();
+    void run();
+
+public slots:
+    void update();
 
 private:
     Ui::Game *ui;
+    QTimer *g_timer;
+    QImage *m_img;
+
+    Agent *agent;
+
+
 };
 #endif // GAME_H
