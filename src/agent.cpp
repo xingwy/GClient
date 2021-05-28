@@ -15,3 +15,6 @@ Agent::~Agent()
 Bag* Agent::getBag() {
     return bag;
 }
+
+void Agent::update() {
+}
