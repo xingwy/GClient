@@ -6,12 +6,13 @@ Game::Game(QWidget *parent)
     , ui(new Ui::Game)
 {
     ui->setupUi(this);
-    g_timer = new QTimer(this);
-    m_img = new QImage("C:/Users/Administrator/Desktop/workspace/GClient/res/images/tank.jpg");
-
-    agent = new Agent(this->ui->centralwidget);
     // 设置面板
 
+    g_timer = new QTimer(this);
+    agent = new Agent(this->ui->centralwidget);
+
+    // 初始化登录widget
+    uc_login = new UCLogin(this->ui->centralwidget);
 }
 
 Game::~Game()
@@ -22,15 +23,17 @@ Game::~Game()
 }
 
 void Game::run() {
+    // 游戏定时器设置
     connect(g_timer, SIGNAL(timeout()), this, SLOT(update()));
     g_timer->setInterval(40);
     g_timer->start();
 
+    // 设置窗体大小
+
 }
 void Game::update() {
-    // 获取所有数据刷新显示盘
-    this->ui->centralwidget->update();
     // 代理人定时器
+
     agent->update();
 }
 

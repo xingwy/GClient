@@ -7,6 +7,8 @@
 #include <iostream>
 
 #include "./src/agent.h"
+#include "./src/base/ucbase.h"
+#include "./src/uc/uclogin.h"
 
 using namespace std;
 
@@ -33,6 +35,7 @@ private:
 
     Agent *agent;
 
+    UCLogin *uc_login;
 
 };
 #endif // GAME_H

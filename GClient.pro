@@ -16,8 +16,10 @@ SOURCES += \
     src/agent.cpp \
     src/base/item.cpp \
     src/base/module_base.cpp \
+    src/base/ucbase.cpp \
     src/module/bag.cpp \
-    src/singleton/login.cpp
+    src/singleton/login.cpp \
+    src/uc/uclogin.cpp
 
 HEADERS += \
     game.h \
@@ -26,8 +28,10 @@ HEADERS += \
     src/agent.h \
     src/base/item.h \
     src/base/module_base.h \
+    src/base/ucbase.h \
     src/module/bag.h \
-    src/singleton/login.h
+    src/singleton/login.h \
+    src/uc/uclogin.h
 
 FORMS += \
     game.ui
