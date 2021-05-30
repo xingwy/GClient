@@ -1,5 +1,4 @@
-QT       += core gui
-
+QT       += core gui network websockets
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 CONFIG += c++11
@@ -9,6 +8,8 @@ CONFIG += c++11
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    lib/gtcp.cpp \
+    lib/net.cpp \
     lib/qui.cpp \
     main.cpp \
     game.cpp \
@@ -18,12 +19,14 @@ SOURCES += \
     src/base/module_base.cpp \
     src/base/ucbase.cpp \
     src/module/bag.cpp \
-    src/singleton/login.cpp \
+    src/singleton/login_mgr.cpp \
     src/uc/uclogin.cpp
 
 HEADERS += \
     define/constant.h \
     game.h \
+    lib/gtcp.h \
+    lib/net.h \
     lib/qui.h \
     mi.h \
     src/agent.h \
@@ -31,7 +34,7 @@ HEADERS += \
     src/base/module_base.h \
     src/base/ucbase.h \
     src/module/bag.h \
-    src/singleton/login.h \
+    src/singleton/login_mgr.h \
     src/uc/uclogin.h
 
 FORMS += \
