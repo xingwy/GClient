@@ -22,6 +22,7 @@ SOURCES += \
     src/uc/uclogin.cpp
 
 HEADERS += \
+    define/constant.h \
     game.h \
     lib/qui.h \
     mi.h \
@@ -50,3 +51,13 @@ RESOURCES += \
     res/img.qrc
 
 DISTFILES +=
+
+INCLUDEPATH += \
+    $$PWD/src/ \
+    $$PWD/src/uc \
+    $$PWD/define \
+    $$PWD/src/base \
+    $$PWD/src/module \
+    $$PWD/src/singleton \
+    $$PWD/src/uc \
+    $$PWD/lib

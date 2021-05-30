@@ -1,14 +1,17 @@
 #ifndef GAME_H
 #define GAME_H
 
-#include <QMainWindow>
+
 #include <QTimer>
 #include <QImage>
 #include <iostream>
+#include <QMainWindow>
+#include <QAbstractButton>
 
-#include "./src/agent.h"
-#include "./src/base/ucbase.h"
-#include "./src/uc/uclogin.h"
+#include <agent.h>
+#include <ucbase.h>
+#include <uclogin.h>
+#include <constant.h>
 
 using namespace std;
 
@@ -27,6 +30,12 @@ public:
 
 public slots:
     void update();
+
+private slots:
+
+    void on_uc_login_btn_clicked(bool checked);
+
+    void on_uc_register_btn_clicked(bool checked);
 
 private:
     Ui::Game *ui;

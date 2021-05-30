@@ -1,12 +1,16 @@
 #ifndef MI_H
 #define MI_H
 
+#include <QImage>
 #include <QObject>
 #include <QWidget>
-#include <QImage>
 #include <QPainter>
+
 #include <iostream>
-#include "./lib/qui.h"
+#include <qui.h>
+#include <constant.h>
+
+
 
 using namespace std;
 class mi : public QUi
