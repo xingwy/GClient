@@ -1,6 +1,7 @@
 #include "game.h"
 #include "ui_game.h"
 
+
 Game::Game(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::Game)
@@ -8,11 +9,19 @@ Game::Game(QWidget *parent)
     ui->setupUi(this);
     // 设置面板
 
+    this->resize(GAME_BG_WIDTH, GAME_BG_HEIGHT);
+    this->setMinimumSize(GAME_BG_WIDTH, GAME_BG_HEIGHT);
+    this->setMaximumSize(GAME_BG_WIDTH, GAME_BG_HEIGHT);
+
     g_timer = new QTimer(this);
     agent = new Agent(this->ui->centralwidget);
 
     // 初始化登录widget
-    uc_login = new UCLogin(this->ui->centralwidget);
+//    uc_login = new UCLogin(this->ui->centralwidget);
+    qDebug()<< ui->uc_login_btn->parent()->objectName();
+
+    ui->uc_login_btn->update();
+
 }
 
 Game::~Game()
@@ -35,5 +44,16 @@ void Game::update() {
     // 代理人定时器
 
     agent->update();
+}
+
+void Game::on_uc_login_btn_clicked(bool checked)
+{
+    cout<<"on_uc_login_btn_clicked:"<<checked<<endl;
+}
+
+
+void Game::on_uc_register_btn_clicked(bool checked)
+{
+    cout<<"on_uc_register_btn_clicked:"<<checked<<endl;
 }
 

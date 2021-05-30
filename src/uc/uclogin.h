@@ -4,12 +4,14 @@
 #include <iostream>
 #include <QImage>
 #include <QPainter>
+#include <constant.h>
+
 #include "../base/ucbase.h"
 
 using namespace std;
 
 
-class UCLogin: UCBase
+class UCLogin: public UCBase
 {
 public:
     UCLogin(QWidget *parent = nullptr);

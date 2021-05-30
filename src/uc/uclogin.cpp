@@ -5,6 +5,7 @@ UCLogin::UCLogin(QWidget *parent): UCBase(parent)
     this->resize(958, 538);
     this->setMinimumSize(958, 538);
     this->setMaximumSize(958, 538);
+
 }
 
 UCLogin::~UCLogin() {
@@ -12,10 +13,10 @@ UCLogin::~UCLogin() {
 }
 
 void UCLogin::paintEvent(QPaintEvent *event) {
-
-    QImage *a_img = new QImage(":/images/scene/s_login_v1.jpg");
+    QWidget::paintEvent(event);
+    QImage *login_bg_img = new QImage(RES_LOGIN_BG_IMG);
     QPainter *painter = new QPainter(this);
-    painter->drawImage(QRect(1, 1, 960 - 1, 540 - 1), *a_img, QRect(0, 0, 960, 540));
+    painter->drawImage(QRect(0, 0, LOGIN_BG_WIDTH, LOGIN_BG_HEIGHT), *login_bg_img, QRect(0, 0, login_bg_img->width(), login_bg_img->height()));
     painter->end();
-    cout<<this->height()<<"--"<<this->width()<<endl;
+
 }
