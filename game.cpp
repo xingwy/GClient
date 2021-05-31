@@ -48,12 +48,18 @@ void Game::update() {
 
 void Game::on_uc_login_btn_clicked(bool checked)
 {
-    cout<<"on_uc_login_btn_clicked:"<<checked<<endl;
+    USER_STATE state = this->agent->getAuthState();
+
+//    if (state != USER_NOTAUTH) {
+//        return;
+//    }
+    LoginMgr::authLogin(this->agent);
+
 }
 
 
 void Game::on_uc_register_btn_clicked(bool checked)
 {
-    cout<<"on_uc_register_btn_clicked:"<<checked<<endl;
+
 }
 

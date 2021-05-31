@@ -6,7 +6,8 @@
 #include <QImage>
 #include <iostream>
 
-#include "./module/bag.h"
+#include <bag.h>
+#include <constant.h>
 
 class Agent
 {
@@ -16,10 +17,22 @@ public:
 
     Bag* getBag();
     void update();
+
+    USER_STATE getAuthState() {
+        return this->authState;
+    }
+
+    void setAuthState(USER_STATE state) {
+        this->authState = state;
+    }
 private:
     QString account;
     QString name;
+
+
     unsigned int level;
+    // 登录状态 是否经过验证
+    USER_STATE authState;
 
     Bag *bag;
 

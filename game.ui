@@ -137,6 +137,12 @@
       <string>注册</string>
      </property>
     </widget>
+    <zorder>uc_login_password</zorder>
+    <zorder>uc_login_user_tx</zorder>
+    <zorder>uc_login_password_tx</zorder>
+    <zorder>uc_login_btn</zorder>
+    <zorder>uc_register_btn</zorder>
+    <zorder>uc_login_user</zorder>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">

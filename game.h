@@ -12,6 +12,7 @@
 #include <ucbase.h>
 #include <uclogin.h>
 #include <constant.h>
+#include <login_mgr.h>
 
 using namespace std;
 
