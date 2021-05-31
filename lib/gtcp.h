@@ -15,9 +15,12 @@ class GTcp: public Net
 public:
     GTcp(QString host, quint16 port);
 
+    bool sendData();
+
 private slots:
     void onConnected();
     void onDisconnected();
+    void onMessage();
 //    void disconnect();
     void error(QAbstractSocket::SocketError socketError);
 
