@@ -53,13 +53,29 @@ void Game::on_uc_login_btn_clicked(bool checked)
 //    if (state != USER_NOTAUTH) {
 //        return;
 //    }
-    LoginMgr::authLogin(this->agent);
+
+    QString account = ui->uc_login_user->text();
+    QString password = ui->uc_login_password->text();
+    qDebug()<<account<<"--"<<password;
+    this->_tcpSession = LoginMgr::authLogin(account, password);
 
 }
 
 
 void Game::on_uc_register_btn_clicked(bool checked)
 {
-
+    QVariantList ms;
+    ms<<2;
+    ms<<"2123";
+    this->_tcpSession->sendMessage(1000, 123123, 12, ms);
 }
+
+void Game::userSend()
+{
+    QVariantList ms;
+    ms<<2;
+    ms<<"2123";
+    this->_tcpSession->sendMessage(1000, 123123, 12, ms);
+}
+
 

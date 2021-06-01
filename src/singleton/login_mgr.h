@@ -11,7 +11,7 @@ class LoginMgr
 public:
     LoginMgr();
 
-    bool static authLogin(Agent *agent);
+    GTcp static *authLogin(QString account, QString password);
 };
 
 #endif // LOGIN_MGR_H

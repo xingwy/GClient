@@ -4,12 +4,12 @@ LoginMgr::LoginMgr() {
 
 }
 
-bool LoginMgr::authLogin(Agent *agent) {
+GTcp *LoginMgr::authLogin(QString account, QString password) {
     //
-    qDebug()<<"----auth login";
+    qDebug()<<"----auth login"<<account<<"."<<password;
 
-    GTcp *tcp = new GTcp(HOST, PORT);
-
-    return true;
+    GTcp *tcp = new GTcp(GAMEHOST, GAMEPORT);
+    tcp->clientConnect(account, password);
+    return tcp;
 }
 
