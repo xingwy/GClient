@@ -18,6 +18,7 @@ SOURCES += \
     $$QMSGPACK_PATH/private/qt_types_p.cpp \
     $$QMSGPACK_PATH/msgpackstream.cpp \
     lib/gtcp.cpp \
+    lib/iobuffer.cpp \
     lib/net.cpp \
     lib/qui.cpp \
     main.cpp \
@@ -30,7 +31,7 @@ SOURCES += \
     src/module/bag.cpp \
     src/singleton/login_mgr.cpp \
     src/uc/uclogin.cpp \
-    utils/formatdata.cpp
+    utils/formatdata.cpp \
 
 
 HEADERS += \
@@ -45,6 +46,7 @@ HEADERS += \
     $$QMSGPACK_PATH/msgpackstream.h \
     game.h \
     lib/gtcp.h \
+    lib/iobuffer.h \
     lib/net.h \
     lib/qui.h \
     mi.h \

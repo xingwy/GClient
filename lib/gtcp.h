@@ -9,6 +9,7 @@
 
 #include <net.h>
 #include <constant.h>
+#include <iobuffer.h>
 
 class GTcp: public Net
 {

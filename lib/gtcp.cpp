@@ -4,6 +4,8 @@
 #include <QBuffer>
 #include <QDataStream>
 #include "msgpack.h"
+#include <iobuffer.h>
+using namespace IOBuffer;
 
 GTcp::GTcp(QString host, quint16 port): Net(host, port) {
     g_webSocket = new QWebSocket();
@@ -44,13 +46,8 @@ bool GTcp::sendData() {
     qint8 flag = 3;
     list << size << offset << flag;
     QByteArray arr = MsgPack::pack(list);
-
-//    for (int i=0; i<arr.size(); i++) {
-//        qDebug()<<arr[i];
-//    }
-    this->g_webSocket->sendBinaryMessage(arr);
-    qDebug()<<arr.toHex();
-    qDebug()<<this->setFixedData(arr);
+    QByteArray pack = this->buildFixedData(101, 103210, flag, arr);
+    this->g_webSocket->sendBinaryMessage(pack);
     return true;
 }
 
@@ -62,20 +59,19 @@ void GTcp::onMessage() {
 
 QVariantList GTcp::setFixedData(QByteArray content) {
     QVariantList list;
-    qDebug()<<content;
+//    qDebug()<<content;
 
-    qDebug()<<content.size();
+//    qDebug()<<content.size();
 
-    qint32 size;
-    qint32 offset;
-    qint8 flag;
-    memcpy(&size, &content.data()[0], 4);
-    memcpy(&offset, &content.data()[4], 4);
+//    qint32 size;
+//    qint32 offset;
+//    qint8 flag;
+//    memcpy(&size, &content.data()[0], 4);
+//    memcpy(&offset, &content.data()[4], 4);
 //    memcpy(&flag, &content.data()[3], 1);
 
 
 
-    qDebug()<<size<<"--"<<offset<<"--"<<flag;
 //    offset += 4;
 //    if (size !== content.length) {
 //        // 校验数据长度
@@ -91,10 +87,22 @@ QVariantList GTcp::setFixedData(QByteArray content) {
 }
 
 QByteArray GTcp::buildFixedData(qint32 from, qint32 opcode, qint8 flag, QByteArray content) {
-    QDataStream* input;
-    *input << from;
-    *input << opcode;
-    *input << flag;
+
+    QByteArray pack;
+    qint32 len = PACKAGE_HEAD_LEN + content.size();
+    qDebug()<< "to hex init:"<<pack.toHex();
+    int offset = 0;
+    pack.insert(offset, qint32ToByte(len));
+    offset += 4;
+    pack.insert(offset, qint32ToByte(from));
+    offset += 4;
+    pack.insert(offset, qint32ToByte(opcode));
+    offset += 4;
+    pack.insert(offset, qint8ToByte(flag));
+    offset += 1;
+    pack.insert(offset, content);
+    qDebug()<< "hex size:"<<pack.toHex();
+    return pack;
 
 }
 
