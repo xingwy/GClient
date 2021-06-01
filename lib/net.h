@@ -2,7 +2,11 @@
 #define NET_H
 
 #include <QObject>
+#include <QIODevice>
+#include <QWebSocket>
+#include <QtNetwork/QTcpSocket>
 #include <QtNetwork/QHostAddress>
+#include <QtNetwork/QAbstractSocket>
 
 #include <iostream>
 

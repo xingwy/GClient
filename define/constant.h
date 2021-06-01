@@ -11,8 +11,8 @@
 #define GAME_BG_IMG ":/images/bg/bg_black.jpg"
 #define RES_LOGIN_BG_IMG ":/images/scene/s_login_v1.jpg"
 
-#define HOST "127.0.0.1"
-#define PORT 10002
+#define GAMEHOST "ws://127.0.0.1"
+#define GAMEPORT 10001
 
 // enum des
 enum USER_STATE {USER_NOTAUTH, USER_AUTH, ONLINE, OUTLINE};

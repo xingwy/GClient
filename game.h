@@ -8,6 +8,7 @@
 #include <QMainWindow>
 #include <QAbstractButton>
 
+#include <gtcp.h>
 #include <agent.h>
 #include <ucbase.h>
 #include <uclogin.h>
@@ -32,6 +33,8 @@ public:
 public slots:
     void update();
 
+    void userSend();
+
 private slots:
 
     void on_uc_login_btn_clicked(bool checked);
@@ -46,6 +49,8 @@ private:
     Agent *agent;
 
     UCLogin *uc_login;
+
+    GTcp *_tcpSession;
 
 };
 #endif // GAME_H

@@ -13,15 +13,6 @@ namespace IOBuffer {
         return types;
     }
 
-
-    qint32 bytesToqint32(QByteArray bytes) {
-        int addr = bytes[0] & 0x000000FF;
-        addr |= ((bytes[1] << 8) & 0x0000FF00);
-        addr |= ((bytes[2] << 16) & 0x00FF0000);
-        addr |= ((bytes[3] << 24) & 0xFF000000);
-        return addr;
-    }
-
     QByteArray qint8ToByte(qint8 i)
     {
         QByteArray types;
@@ -33,6 +24,14 @@ namespace IOBuffer {
 
     qint8 bytesToQint8(QByteArray bytes) {
         int addr = bytes[0] & 0x000000FF;
+        return addr;
+    }
+
+    qint32 bytesToQint32(QByteArray bytes) {
+        int addr = bytes[0] & 0x000000FF;
+        addr |= ((bytes[1] << 8) & 0x0000FF00);
+        addr |= ((bytes[2] << 16) & 0x00FF0000);
+        addr |= ((bytes[3] << 24) & 0xFF000000);
         return addr;
     }
 }
