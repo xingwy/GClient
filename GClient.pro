@@ -10,14 +10,15 @@ CONFIG += c++11
 QMSGPACK_PATH = $$PWD/res-lib/qmsgpack
 
 SOURCES += \
-    $$QMSGPACK_PATH/src/msgpack.cpp \
-    $$QMSGPACK_PATH/src/msgpackcommon.cpp \
-    $$QMSGPACK_PATH/src/private/pack_p.cpp \
-    $$QMSGPACK_PATH/src/private/unpack_p.cpp \
-    $$QMSGPACK_PATH/src/stream/time.cpp \
-    $$QMSGPACK_PATH/src/private/qt_types_p.cpp \
-    $$QMSGPACK_PATH/src/msgpackstream.cpp \
+    $$QMSGPACK_PATH/msgpack.cpp \
+    $$QMSGPACK_PATH/msgpackcommon.cpp \
+    $$QMSGPACK_PATH/private/pack_p.cpp \
+    $$QMSGPACK_PATH/private/unpack_p.cpp \
+    $$QMSGPACK_PATH/stream/time.cpp \
+    $$QMSGPACK_PATH/private/qt_types_p.cpp \
+    $$QMSGPACK_PATH/msgpackstream.cpp \
     lib/gtcp.cpp \
+    lib/iobuffer.cpp \
     lib/net.cpp \
     lib/qui.cpp \
     main.cpp \
@@ -30,21 +31,22 @@ SOURCES += \
     src/module/bag.cpp \
     src/singleton/login_mgr.cpp \
     src/uc/uclogin.cpp \
-    utils/formatdata.cpp
+    utils/formatdata.cpp \
 
 
 HEADERS += \
     define/constant.h \
-    $$QMSGPACK_PATH/src/msgpack.h \
-    $$QMSGPACK_PATH/src/private/pack_p.h \
-    $$QMSGPACK_PATH/src/private/unpack_p.h \
-    $$QMSGPACK_PATH/src/private/qt_types_p.h \
-    $$QMSGPACK_PATH/src/endianhelper.h \
-    $$QMSGPACK_PATH/src/msgpackcommon.h \
-    $$QMSGPACK_PATH/src/msgpack_export.h \
-    $$QMSGPACK_PATH/src/msgpackstream.h \
+    $$QMSGPACK_PATH/msgpack.h \
+    $$QMSGPACK_PATH/private/pack_p.h \
+    $$QMSGPACK_PATH/private/unpack_p.h \
+    $$QMSGPACK_PATH/private/qt_types_p.h \
+    $$QMSGPACK_PATH/endianhelper.h \
+    $$QMSGPACK_PATH/msgpackcommon.h \
+    $$QMSGPACK_PATH/msgpack_export.h \
+    $$QMSGPACK_PATH/msgpackstream.h \
     game.h \
     lib/gtcp.h \
+    lib/iobuffer.h \
     lib/net.h \
     lib/qui.h \
     mi.h \
@@ -89,4 +91,4 @@ INCLUDEPATH += \
     $$PWD/src/uc \
     $$PWD/lib \
     $$PWD/utils \
-    $$QMSGPACK_PATH/src \
+    $$QMSGPACK_PATH/

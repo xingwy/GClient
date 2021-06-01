@@ -9,6 +9,7 @@
 
 #include <net.h>
 #include <constant.h>
+#include <iobuffer.h>
 
 class GTcp: public Net
 {
@@ -24,9 +25,13 @@ private slots:
 //    void disconnect();
     void error(QAbstractSocket::SocketError socketError);
 
+
 private:
     QStringList m_oData;
     QWebSocket* g_webSocket;
+
+    QVariantList setFixedData(QByteArray data);
+    QByteArray buildFixedData(qint32 from, qint32 opcode, qint8 flag, QByteArray content);
 };
 
 #endif // GTCP_H
