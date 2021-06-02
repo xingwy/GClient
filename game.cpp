@@ -14,14 +14,15 @@ Game::Game(QWidget *parent)
     this->setMaximumSize(GAME_BG_WIDTH, GAME_BG_HEIGHT);
 
     g_timer = new QTimer(this);
-    agent = new Agent(this->ui->centralwidget);
+    this->_agent = new Agent(this);
 
     // 初始化登录widget
-//    uc_login = new UCLogin(this->ui->centralwidget);
-    qDebug()<< ui->uc_login_btn->parent()->objectName();
 
-    ui->uc_login_btn->update();
+    // 路由器
+    this->_grouter = new GRouter(this);
 
+    // 协议管理器
+    this->_protocol = new GProtocol(this);
 }
 
 Game::~Game()
@@ -31,7 +32,8 @@ Game::~Game()
     delete g_timer;
 }
 
-void Game::run() {
+void Game::run()
+{
     // 游戏定时器设置
     connect(g_timer, SIGNAL(timeout()), this, SLOT(update()));
     g_timer->setInterval(40);
@@ -43,31 +45,7 @@ void Game::run() {
 void Game::update() {
     // 代理人定时器
 
-    agent->update();
-}
-
-void Game::on_uc_login_btn_clicked(bool checked)
-{
-    USER_STATE state = this->agent->getAuthState();
-
-//    if (state != USER_NOTAUTH) {
-//        return;
-//    }
-
-    QString account = ui->uc_login_user->text();
-    QString password = ui->uc_login_password->text();
-    qDebug()<<account<<"--"<<password;
-    this->_tcpSession = LoginMgr::authLogin(account, password);
-
-}
-
-
-void Game::on_uc_register_btn_clicked(bool checked)
-{
-    QVariantList ms;
-    ms<<2;
-    ms<<"2123";
-    this->_tcpSession->sendMessage(1000, 123123, 12, ms);
+    this->_agent->update();
 }
 
 void Game::userSend()
@@ -75,7 +53,35 @@ void Game::userSend()
     QVariantList ms;
     ms<<2;
     ms<<"2123";
-    this->_tcpSession->sendMessage(1000, 123123, 12, ms);
+    this->_gtcp->sendMessage(1000, 123123, 12, ms);
 }
+
+// slot函数
+void Game::connectServer()
+{
+    qDebug()<<"game connect";
+    // 关闭Login
+    ui->uc_login->close();
+}
+
+void Game::on_uc_login_btn_clicked(bool checked)
+{
+    qDebug()<<"on_uc_register_btn_clicked-"<<checked;
+    QString account = ui->uc_login_user->text();
+    QString password = ui->uc_login_password->text();
+    qDebug()<<account<<"--"<<password;
+    this->_gtcp = LoginMgr::authLogin(this, account, password);
+
+}
+
+
+void Game::on_uc_register_btn_clicked(bool checked)
+{
+    qDebug()<<"on_uc_register_btn_clicked-"<<checked;
+    QVariantList ms;
+    this->_gtcp->sendMessage(1000, 123123, 12, ms);
+}
+
+
 
 
