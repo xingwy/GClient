@@ -17,8 +17,9 @@ SOURCES += \
     $$QMSGPACK_PATH/stream/time.cpp \
     $$QMSGPACK_PATH/private/qt_types_p.cpp \
     $$QMSGPACK_PATH/msgpackstream.cpp \
+    lib/gprotocol.cpp \
+    lib/grouter.cpp \
     lib/gtcp.cpp \
-    lib/iobuffer.cpp \
     lib/net.cpp \
     lib/qui.cpp \
     main.cpp \
@@ -31,7 +32,7 @@ SOURCES += \
     src/module/bag.cpp \
     src/singleton/login_mgr.cpp \
     src/uc/uclogin.cpp \
-    utils/formatdata.cpp \
+    utils/iobuffer.cpp \
 
 
 HEADERS += \
@@ -44,9 +45,11 @@ HEADERS += \
     $$QMSGPACK_PATH/msgpackcommon.h \
     $$QMSGPACK_PATH/msgpack_export.h \
     $$QMSGPACK_PATH/msgpackstream.h \
+    define/protocol.h \
     game.h \
+    lib/gprotocol.h \
+    lib/grouter.h \
     lib/gtcp.h \
-    lib/iobuffer.h \
     lib/net.h \
     lib/qui.h \
     mi.h \
@@ -57,7 +60,7 @@ HEADERS += \
     src/module/bag.h \
     src/singleton/login_mgr.h \
     src/uc/uclogin.h \
-    utils/formatdata.h
+    utils/iobuffer.h \
 
 
 

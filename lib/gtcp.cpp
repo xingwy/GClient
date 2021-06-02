@@ -6,8 +6,8 @@
 #include <iobuffer.h>
 using namespace IOBuffer;
 
-GTcp::GTcp(QString host, quint16 port): Net(host, port) {
-
+GTcp::GTcp(Game *g, QString host, quint16 port): Net(host, port) {
+    this->_game = g;
 }
 
 bool GTcp::clientConnect(QString account, QString password) {
@@ -26,6 +26,9 @@ bool GTcp::clientConnect(QString account, QString password) {
 void GTcp::onConnected() {
     connect(g_webSocket, &QWebSocket::binaryMessageReceived,
                 this, &GTcp::onMessage);
+
+    // 执行回调 告知游戏已连接
+    this->_game->connectServer();
 }
 
 void GTcp::onDisconnected() {

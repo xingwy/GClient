@@ -6,13 +6,16 @@
 #include <QImage>
 #include <iostream>
 
-#include <bag.h>
-#include <constant.h>
+#include "bag.h"
+#include "game.h"
+#include "constant.h"
+
+class Game;
 
 class Agent
 {
 public:
-    Agent(QWidget *parent = nullptr);
+    Agent(Game *g = nullptr);
     ~Agent();
 
     Bag* getBag();
@@ -35,6 +38,8 @@ private:
     USER_STATE authState;
 
     Bag *bag;
+
+    Game *_game;
 
 };
 

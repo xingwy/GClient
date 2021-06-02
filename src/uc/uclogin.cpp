@@ -8,7 +8,8 @@ UCLogin::UCLogin(QWidget *parent): UCBase(parent)
 
 }
 
-UCLogin::~UCLogin() {
+UCLogin::~UCLogin()
+{
 
 }
 

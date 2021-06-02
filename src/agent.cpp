@@ -3,9 +3,10 @@
 
 #include <iostream>
 
-Agent::Agent(QWidget *parent)
+Agent::Agent(Game *g)
 {
-    bag = new Bag(parent, this);
+    this->_game = g;
+    bag = new Bag(g->centralWidget(), this);
     authState = USER_NOTAUTH;
 }
 
@@ -13,6 +14,7 @@ Agent::~Agent()
 {
 
 }
+
 Bag* Agent::getBag() {
     return bag;
 }
