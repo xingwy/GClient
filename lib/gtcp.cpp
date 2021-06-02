@@ -16,7 +16,6 @@ bool GTcp::clientConnect(QString account, QString password) {
     connect(g_webSocket, &QWebSocket::connected, this, &GTcp::onConnected);
     connect(g_webSocket, &QWebSocket::disconnected, this, &GTcp::onDisconnected);
     connect(g_webSocket, &QWebSocket::destroyed, this, &GTcp::onClosed);
-//    connect(g_webSocket, &QWebSocket::sslErrors, this, &GTcp::onError);
 
     // 建立连接
     g_webSocket->open(url);
