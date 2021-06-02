@@ -23,6 +23,9 @@ Game::Game(QWidget *parent)
 
     // 协议管理器
     this->_protocol = new GProtocol(this);
+
+    //test
+//    this->_protocol->registerProtocol(1, Game::userSend);
 }
 
 Game::~Game()
@@ -53,7 +56,8 @@ void Game::userSend()
     QVariantList ms;
     ms<<2;
     ms<<"2123";
-    this->_gtcp->sendMessage(1000, 123123, 12, ms);
+    qDebug()<<ms;
+//    this->_gtcp->sendMessage(1000, 123123, 12, ms);
 }
 
 // slot函数
