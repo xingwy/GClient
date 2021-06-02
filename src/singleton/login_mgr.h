@@ -14,7 +14,7 @@ class LoginMgr
 public:
     LoginMgr();
 
-    GTcp static *authLogin(Game *p, QString account, QString password);
+    void static *authLogin(GTcp* gtcp, QString account, QString password);
 };
 
 #endif // LOGIN_MGR_H

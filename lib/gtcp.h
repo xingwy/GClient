@@ -7,10 +7,9 @@
 #include <QtNetwork/QAbstractSocket>
 
 
-#include <net.h>
-#include <constant.h>
-#include <iobuffer.h>
-#include "game.h"
+#include "net.h"
+#include "constant.h"
+#include "iobuffer.h"
 
 class Game;
 

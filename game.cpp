@@ -1,6 +1,13 @@
 #include "game.h"
 #include "ui_game.h"
 
+void func1(QVariantList list) {
+    qDebug()<<"func1";
+}
+
+void func2(QVariantList list) {
+    qDebug()<<"func2";
+}
 
 Game::Game(QWidget *parent)
     : QMainWindow(parent)
@@ -14,15 +21,17 @@ Game::Game(QWidget *parent)
     this->setMaximumSize(GAME_BG_WIDTH, GAME_BG_HEIGHT);
 
     g_timer = new QTimer(this);
+
+    // 角色数据
     this->_agent = new Agent(this);
-
-    // 初始化登录widget
-
+    // TCP连接
+    this->_gtcp = new GTcp(this, GAMEHOST, GAMEPORT);
     // 路由器
     this->_grouter = new GRouter(this);
-
     // 协议管理器
-    this->_protocol = new GProtocol(this);
+    this->_gprotocol = new GProtocol(this);
+
+    //test
 }
 
 Game::~Game()
@@ -30,6 +39,23 @@ Game::~Game()
     g_timer->stop();
     delete ui;
     delete g_timer;
+}
+
+GTcp* Game::gtcp()
+{
+    return this->_gtcp;
+}
+Agent* Game::agent()
+{
+    return this->_agent;
+}
+GRouter* Game::grouter()
+{
+    return this->_grouter;
+}
+GProtocol* Game::gprotocol()
+{
+    return this->_gprotocol;
 }
 
 void Game::run()
@@ -53,7 +79,8 @@ void Game::userSend()
     QVariantList ms;
     ms<<2;
     ms<<"2123";
-    this->_gtcp->sendMessage(1000, 123123, 12, ms);
+    qDebug()<<ms;
+//    this->_gtcp->sendMessage(1000, 123123, 12, ms);
 }
 
 // slot函数
@@ -70,7 +97,7 @@ void Game::on_uc_login_btn_clicked(bool checked)
     QString account = ui->uc_login_user->text();
     QString password = ui->uc_login_password->text();
     qDebug()<<account<<"--"<<password;
-    this->_gtcp = LoginMgr::authLogin(this, account, password);
+    LoginMgr::authLogin(this->gtcp(), account, password);
 
 }
 
