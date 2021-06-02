@@ -43,6 +43,11 @@ public:
     // 分发消息
     void distribute();
 
+    // set/get
+    GTcp* gtcp();
+    Agent* agent();
+    GRouter* grouter();
+    GProtocol* gprotocol();
 
 public slots:
     void update();
@@ -63,7 +68,7 @@ private:
     GTcp *_gtcp;
     Agent *_agent;
     GRouter *_grouter;
-    GProtocol *_protocol;
+    GProtocol *_gprotocol;
 
 };
 #endif // GAME_H
