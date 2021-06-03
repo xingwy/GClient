@@ -4,9 +4,9 @@
 #include <iostream>
 #include <QImage>
 #include <QPainter>
-#include <constant.h>
 
-#include "../base/ucbase.h"
+#include "ucbase.h"
+#include "constant.h"
 
 using namespace std;
 

@@ -11,6 +11,7 @@
 #include "gtcp.h"
 #include "agent.h"
 #include "ucbase.h"
+#include "uchall.h"
 #include "uclogin.h"
 #include "grouter.h"
 #include "constant.h"
@@ -66,6 +67,7 @@ private:
     QImage *m_img;
 
     UCLogin *uc_login;
+    UCHall *uc_hall;
 
     GTcp *_gtcp;
     Agent *_agent;

@@ -2,6 +2,9 @@
 <ui version="4.0">
  <class>Game</class>
  <widget class="QMainWindow" name="Game">
+  <property name="enabled">
+   <bool>true</bool>
+  </property>
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -144,6 +147,37 @@
     <zorder>uc_register_btn</zorder>
     <zorder>uc_login_user</zorder>
    </widget>
+   <widget class="UCLogin" name="uc_hall" native="true">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>1</x>
+      <y>1</y>
+      <width>958</width>
+      <height>538</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>958</width>
+      <height>538</height>
+     </size>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>958</width>
+      <height>538</height>
+     </size>
+    </property>
+    <property name="baseSize">
+     <size>
+      <width>958</width>
+      <height>538</height>
+     </size>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
@@ -151,7 +185,7 @@
      <x>0</x>
      <y>0</y>
      <width>960</width>
-     <height>23</height>
+     <height>20</height>
     </rect>
    </property>
   </widget>
