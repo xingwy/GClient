@@ -1,8 +1,5 @@
 #include "gtcp.h"
-
-#include <QBuffer>
-#include <QByteArray>
-
+#include "game.h"
 #include "msgpack.h"
 #include "iobuffer.h"
 

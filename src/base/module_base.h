@@ -1,20 +1,22 @@
 #ifndef MODULEBASE_H
 #define MODULEBASE_H
 
-#include "../../lib/qui.h"
+#include "qui.h"
+#include "agent.h"
 
 class Agent;
 
-
-class ModuleBase: public QUi
+class ModuleBase
 {
 public:
-    ModuleBase(QWidget *parent = nullptr, Agent *agent = nullptr);
+    ModuleBase(Agent *agent);
     ~ModuleBase();
-
-    Agent* getAgent();
-
+    Agent* agent();
+    void init();
 protected:
+
+    void _register(qint32 opcode, QKeyFunc handler);
+private:
     Agent* _agent;
 };
 

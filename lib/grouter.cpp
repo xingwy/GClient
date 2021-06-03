@@ -14,8 +14,8 @@ void GRouter::pushMessage(quint32 from, quint32 opcode, quint8 flag, QVariant tu
 
 void GRouter::forward(quint32 from, quint32 opcode, quint8 flag, QVariant tuple)
 {
-    // 执行
-    void(*handler)(QVariant) = this->_game->gprotocol()->getProtocolFunc(opcode);
+    // 交给协议执行
+    QKeyFunc handler = this->_game->gprotocol()->getProtocolFunc(opcode);
     if (!handler) {
         return;
     }

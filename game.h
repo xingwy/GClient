@@ -21,8 +21,10 @@
 using namespace std;
 
 class GTcp;
+class Agent;
 class GRouter;
 class GProtocol;
+
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class Game; }

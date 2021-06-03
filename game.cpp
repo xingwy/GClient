@@ -1,13 +1,6 @@
 #include "game.h"
 #include "ui_game.h"
 
-void func1(QVariantList list) {
-    qDebug()<<"func1";
-}
-
-void func2(QVariantList list) {
-    qDebug()<<"func2";
-}
 
 Game::Game(QWidget *parent)
     : QMainWindow(parent)
@@ -22,8 +15,6 @@ Game::Game(QWidget *parent)
 
     g_timer = new QTimer(this);
 
-    // 角色数据
-    this->_agent = new Agent(this);
     // TCP连接
     this->_gtcp = new GTcp(this, GAMEHOST, GAMEPORT);
     // 路由器
@@ -31,7 +22,10 @@ Game::Game(QWidget *parent)
     // 协议管理器
     this->_gprotocol = new GProtocol(this);
 
-    //test
+    // 角色数据  角色数据最后加载
+    this->_agent = new Agent(this);
+
+
 }
 
 Game::~Game()
@@ -60,27 +54,16 @@ GProtocol* Game::gprotocol()
 
 void Game::run()
 {
-    // 游戏定时器设置
-    connect(g_timer, SIGNAL(timeout()), this, SLOT(update()));
-    g_timer->setInterval(40);
-    g_timer->start();
-
-    // 设置窗体大小
 
 }
 void Game::update() {
     // 代理人定时器
-
     this->_agent->update();
 }
 
 void Game::userSend()
 {
-    QVariantList ms;
-    ms<<2;
-    ms<<"2123";
-    qDebug()<<ms;
-//    this->_gtcp->sendMessage(1000, 123123, 12, ms);
+
 }
 
 // slot函数
@@ -98,7 +81,6 @@ void Game::on_uc_login_btn_clicked(bool checked)
     QString password = ui->uc_login_password->text();
     qDebug()<<account<<"--"<<password;
     LoginMgr::authLogin(this->gtcp(), account, password);
-
 }
 
 

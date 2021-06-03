@@ -1,7 +1,8 @@
 #ifndef GTCP_H
 #define GTCP_H
-
+#include <QBuffer>
 #include <QIODevice>
+#include <QByteArray>
 #include <QWebSocket>
 #include <QtNetwork/QTcpSocket>
 #include <QtNetwork/QAbstractSocket>

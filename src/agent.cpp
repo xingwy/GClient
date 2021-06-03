@@ -1,12 +1,10 @@
 #include "agent.h"
-
-
-#include <iostream>
+#include "bag.h"
 
 Agent::Agent(Game *g)
 {
     this->_game = g;
-    bag = new Bag(g->centralWidget(), this);
+    bag = new Bag(this);
     authState = USER_NOTAUTH;
 }
 
@@ -15,10 +13,18 @@ Agent::~Agent()
 
 }
 
-Bag* Agent::getBag() {
+Game* Agent::game()
+{
+    return this->_game;
+}
+
+Bag* Agent::getBag()
+{
     return bag;
 }
 
-void Agent::update() {
+void Agent::update()
+{
+    this->bag->init();
 }
 

@@ -1,5 +1,6 @@
 #ifndef CONSTANT_H
 #define CONSTANT_H
+#include <QVariant>
 
 #define BORDER 1
 #define GAME_BG_WIDTH 960
@@ -14,8 +15,11 @@
 #define GAMEHOST "ws://127.0.0.1"
 #define GAMEPORT 10001
 
+
 // enum des
 enum USER_STATE {USER_NOTAUTH, USER_AUTH, ONLINE, OUTLINE};
 
+typedef void (*QCallFunc)(QVariant element, void *user_data);
+typedef std::function<void(QVariant)> QKeyFunc;
 
 #endif // CONSTANT_H
