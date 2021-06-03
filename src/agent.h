@@ -6,12 +6,11 @@
 #include <QImage>
 #include <iostream>
 
-#include "bag.h"
 #include "game.h"
 #include "constant.h"
 
+class Bag;
 class Game;
-
 
 class Agent
 {
@@ -29,15 +28,15 @@ public:
     void setAuthState(USER_STATE state) {
         this->authState = state;
     }
+
+    Game* game();
 private:
     QString account;
     QString name;
 
-
     unsigned int level;
     // 登录状态 是否经过验证
     USER_STATE authState;
-
     Bag *bag;
 
     Game *_game;

@@ -2,6 +2,7 @@
 #define GROUTER_H
 
 #include <QQueue>
+#include <functional>
 
 #include "game.h"
 

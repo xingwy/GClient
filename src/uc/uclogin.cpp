@@ -2,9 +2,9 @@
 
 UCLogin::UCLogin(QWidget *parent): UCBase(parent)
 {
-    this->resize(958, 538);
-    this->setMinimumSize(958, 538);
-    this->setMaximumSize(958, 538);
+    this->resize(LOGIN_BG_WIDTH, LOGIN_BG_HEIGHT);
+    this->setMinimumSize(LOGIN_BG_WIDTH, LOGIN_BG_HEIGHT);
+    this->setMaximumSize(LOGIN_BG_WIDTH, LOGIN_BG_HEIGHT);
 
 }
 

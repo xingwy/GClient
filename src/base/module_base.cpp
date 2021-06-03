@@ -1,8 +1,8 @@
 #include "module_base.h"
 
-ModuleBase::ModuleBase(QWidget *parent, Agent *agent): QUi(parent)
+ModuleBase::ModuleBase(Agent *agent)
 {
-    _agent = agent;
+    this->_agent = agent;
 }
 
 ModuleBase::~ModuleBase()
@@ -10,7 +10,12 @@ ModuleBase::~ModuleBase()
     // 是否需要释放
 }
 
-Agent* ModuleBase::getAgent()
+Agent* ModuleBase::agent()
 {
     return _agent;
+}
+
+void ModuleBase::_register(qint32 opcode, QKeyFunc handler)
+{
+    return this->agent()->game()->gprotocol()->registerProtocol(opcode, handler);
 }

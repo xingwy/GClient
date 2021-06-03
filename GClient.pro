@@ -31,6 +31,7 @@ SOURCES += \
     src/base/ucbase.cpp \
     src/module/bag.cpp \
     src/singleton/login_mgr.cpp \
+    src/uc/uchall.cpp \
     src/uc/uclogin.cpp \
     utils/iobuffer.cpp \
 
@@ -59,6 +60,7 @@ HEADERS += \
     src/base/ucbase.h \
     src/module/bag.h \
     src/singleton/login_mgr.h \
+    src/uc/uchall.h \
     src/uc/uclogin.h \
     utils/iobuffer.h \
 
