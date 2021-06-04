@@ -35,17 +35,17 @@ void GTcp::onConnected()
 
 void GTcp::onDisconnected()
 {
-    qDebug()<<"---onDisconnected";
+    // qDebug()<<"---onDisconnected";
 }
 
 void GTcp::onError(QAbstractSocket::SocketError error)
 {
-    qDebug()<<"---error"<<error;
+    // qDebug()<<"---error"<<error;
 }
 
 void GTcp::onClosed()
 {
-    qDebug()<<"---error";
+    // qDebug()<<"---error";
 }
 
 bool GTcp::sendMessage(quint32 from, quint32 opcode, quint8 flag, QVariantList list)
@@ -59,7 +59,7 @@ bool GTcp::sendMessage(quint32 from, quint32 opcode, quint8 flag, QVariantList l
 
 void GTcp::onMessage(QByteArray msg)
 {
-    qDebug()<<"---sendData";
+    // qDebug()<<"---sendData";
     // 收到消息后 转换格式后调用指定方法
     QVariantList content = this->buildFixedData(msg);
 
@@ -114,7 +114,6 @@ QByteArray GTcp::setFixedData(qint32 from, qint32 opcode, qint8 flag, QByteArray
     pack.insert(offset, qint8ToByte(flag));
     offset += 1;
     pack.insert(offset, content);
-    qDebug()<< "hex size:"<<pack.toHex();
     return pack;
 }
 
