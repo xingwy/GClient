@@ -140,12 +140,12 @@
       <string>注册</string>
      </property>
     </widget>
-    <zorder>uc_login_password</zorder>
-    <zorder>uc_login_user_tx</zorder>
-    <zorder>uc_login_password_tx</zorder>
     <zorder>uc_login_btn</zorder>
-    <zorder>uc_register_btn</zorder>
+    <zorder>uc_login_password</zorder>
+    <zorder>uc_login_password_tx</zorder>
     <zorder>uc_login_user</zorder>
+    <zorder>uc_login_user_tx</zorder>
+    <zorder>uc_register_btn</zorder>
    </widget>
    <widget class="UCLogin" name="uc_hall" native="true">
     <property name="enabled">
@@ -178,6 +178,8 @@
      </size>
     </property>
    </widget>
+   <zorder>uc_hall</zorder>
+   <zorder>uc_login</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">

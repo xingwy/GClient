@@ -1,4 +1,5 @@
 #include "uclogin.h"
+#include <QDebug>
 
 UCLogin::UCLogin(QWidget *parent): UCBase(parent)
 {
@@ -14,6 +15,7 @@ UCLogin::~UCLogin()
 }
 
 void UCLogin::paintEvent(QPaintEvent *event) {
+    qDebug()<<"uc login";
     QWidget::paintEvent(event);
     QImage *login_bg_img = new QImage(RES_LOGIN_BG_IMG);
     QPainter *painter = new QPainter(this);

@@ -21,10 +21,8 @@ Game::Game(QWidget *parent)
     this->_grouter = new GRouter(this);
     // 协议管理器
     this->_gprotocol = new GProtocol(this);
-
     // 角色数据  角色数据最后加载
     this->_agent = new Agent(this);
-
 
 }
 
@@ -69,24 +67,22 @@ void Game::userSend()
 // slot函数
 void Game::connectServer()
 {
-    qDebug()<<"game connect";
     // 关闭Login
-    ui->uc_login->close();
 }
 
 void Game::on_uc_login_btn_clicked(bool checked)
 {
-    qDebug()<<"on_uc_register_btn_clicked-"<<checked;
-    QString account = ui->uc_login_user->text();
-    QString password = ui->uc_login_password->text();
-    qDebug()<<account<<"--"<<password;
-    LoginMgr::authLogin(this->gtcp(), account, password);
+    ui->uc_login->close();
+    ui->uc_hall->update();
+    qDebug()<<"on_uc_login_btn_clicked";
+//    QString account = ui->uc_login_user->text();
+//    QString password = ui->uc_login_password->text();
+//    LoginMgr::authLogin(this->gtcp(), account, password);
 }
 
 
 void Game::on_uc_register_btn_clicked(bool checked)
 {
-    qDebug()<<"on_uc_register_btn_clicked-"<<checked;
     QVariantList ms;
     this->_gtcp->sendMessage(1000, 123123, 12, ms);
 }
